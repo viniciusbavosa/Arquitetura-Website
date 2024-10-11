@@ -1,0 +1,13 @@
+<section class="works">
+  <div class="projects__container">
+    @for (project of projects; track $index) {
+      <div class="project__{{ project.class }}">
+        <div 
+          class="bg-animation background-to-animate-{{ project.class }}" appSlideOutAnimation
+        ></div>
+        <img ngSrc="{{ project.src }}" alt="{{ project.alt }}" width="640" height="512" priority>
+        <h1>Lorem, ipsum.</h1>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,38 @@
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -webkit-scrollbar: none;
+  padding-top: 20rem;
+}
+
+.projects__container {
+  grid-column: 2 / -1;
+  position: relative;
+  
+  & > * {
+    display: flex;
+    margin-bottom: 8rem;
+    gap: 8rem;
+  }
+}
+
+.bg-animation {
+  position: absolute;
+  background-color: white;
+  min-width: 640px;
+  min-height: 512px;
+}
+
+img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-block: auto;
+}
