@@ -1,2 +1,20 @@
-<app-header sectionTitle="Architecture"></app-header>
-<router-outlet></router-outlet>
+@switch (currentUrl()) {
+  @case ("/works") {
+    <app-header sectionTitle="Works"></app-header>
+  }
+
+  @case ("/team") {
+    <app-header sectionTitle="partnership"></app-header>
+  }
+
+  @case ("/contact") {
+    <app-header sectionTitle="send me a message"></app-header>
+  }
+  @default {
+    <app-header sectionTitle="Architecture"></app-header>
+  }
+}
+
+<div [@routeAnimations]="prepareRoute(outlet)" style="display: contents;">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

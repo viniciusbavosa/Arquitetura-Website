@@ -10,22 +10,24 @@
 * {
   margin: 0;
   padding: 0;
-  font: inherit; /* Get rid of all font sizes and heights */
+  font: inherit;
+  /* Get rid of all font sizes and heights */
 }
 
 html {
-  hanging-punctuation: first last; /* Not supported in Chrome */
+  hanging-punctuation: first last;
+  /* Not supported in Chrome */
 }
 
 body {
   font-family: Poppins, sans-serif;
   min-height: 100vh;
   min-height: 100dvh;
+  overflow-x: clip;
 }
 
 /* Media responsive */
 img, picture, svg, video {
-  display: block;
   max-width: 100%;
 }
 
@@ -35,7 +37,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   max-width: 75ch;
-  text-wrap: pretty; /* Prevents orphans on lines */
+  text-wrap: pretty;
+  /* Prevents orphans on lines */
 }
 
 a {
@@ -60,3 +63,4 @@ ul {
 .font-500 {
   font-weight: 500;
 }
+

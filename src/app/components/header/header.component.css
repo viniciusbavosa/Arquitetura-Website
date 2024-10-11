@@ -4,48 +4,50 @@
 
 header {
   padding: 24px 48px;
-  position: absolute;
+  position: fixed;
   z-index: 1;
+  contain: content;
 
   display: flex;
   flex-direction: column;
-  
+
   min-width: 100vw;
   min-width: 100dvw;
 }
 
 
-div.inline__elements {
-    display: inline-flex;
-    flex: 1;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 50vh;
-    margin-bottom: 50dvh;
+.inline__elements {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20%;
 
-    .logo {
-      & > span {
-        font: normal bolder 3.125rem Arial, Helvetica, sans-serif;
-      }
-    }
-    
-    div.section__title {
-      background-color: black;
-      padding: 1rem 4rem;
-    }
-
-    div.about__cta {
-      text-wrap: nowrap;
+  .logo {
+    &>span {
+      font: normal bolder 3.125rem Arial, Helvetica, sans-serif;
     }
   }
 
+  div.section__title {
+    background-color: black;
+    padding: 1rem 4rem;
+  }
+
+  div.about__cta {
+    text-wrap: nowrap;
+  }
+}
+
+
 .navbar {
-  margin-bottom: 25vh;
-  margin-bottom: 25dvh;
   position: relative;
-  
-  ul > li {
+  padding-bottom: 7.8%;
+
+  ul>li {
     max-width: min-content;
+  }
+
+  ul>li:not(:last-of-type) {
     margin-bottom: 0.5rem;
   }
 
@@ -57,9 +59,16 @@ div.inline__elements {
       left: -50px;
       background-color: black;
       animation: navbar .4s linear forwards;
+      -webkit-animation: navbar .4s linear forwards;
     }
   }
 
+}
+
+@-webkit-keyframes navbar {
+  to {
+    min-width: 2rem;
+  }
 }
 
 @keyframes navbar {
@@ -88,7 +97,7 @@ div.inline__elements {
 
     &::after {
       content: "";
-      display: none;
+      display: inline;
       position: absolute;
       padding-inline: 1.3rem;
       min-height: .3rem;
@@ -109,8 +118,46 @@ div.inline__elements {
 
 }
 
+.home_about__cta {
+  animation: fadeInWhite .500s linear forwards;
+}
+
+.works_about__cta {
+  animation: fadeInBlack .500s linear forwards;
+}
+
+@keyframes fadeInWhite {
+  from {color: black;}
+  to {
+    color: white;
+  }
+}
+
+@keyframes fadeInBlack {
+  from {color: white;}
+  to {color: black;}
+}
+
 @media (max-width: 1900px) {
-    .social__container > .social__cta {
-      margin-right: 5%; 
+  .social__container>.social__cta {
+    margin-right: 5%;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  span.social::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .inline__elements {
+    margin-bottom: 1rem;
+  }
+
+  .navbar {
+    margin-bottom: 1rem;
   }
 }

@@ -2,27 +2,30 @@
   
   <div class="inline__elements">
     <div class="logo">
-      <span>Inova</span>
+      <span><a routerLink="/">Inova</a></span>
     </div>
     <div class="section__title uppercase font-500">
       <span class="white-text">{{sectionTitle}}</span>
     </div>
     <div class="about__cta uppercase font-500">
-      <a href="#" class="white-text">Click here to learn about us</a>
+      @if (url() === '/home') {
+        <a href="#" class="home_about__cta white-text">Click here to learn about us</a>
+      } @else {
+        <a href="#" class="works_about__cta">Click here to learn about us</a>
+      }
     </div>
   </div>
-  
   <div class="block__elements">
     <nav class="navbar">
       <ul>
         <li>
-          <a routerLink="#" class="works-item uppercase" id="works">works</a>
+          <a routerLink="works" class="works-item uppercase" id="works">works</a>
         </li>
         <li>
-          <a routerLink="#" class="team-item uppercase" id="team">team</a>
+          <a routerLink="/team" class="team-item uppercase" id="team">team</a>
         </li>
         <li>
-          <a routerLink="#" class="contacts-item uppercase" id="contacts">contacts</a>
+          <a routerLink="/contact" class="contacts-item uppercase" id="contacts">contact</a>
         </li>
       </ul>
     </nav>
